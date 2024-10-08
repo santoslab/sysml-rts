@@ -1,3 +1,3 @@
 # sysml-rts
 
-![arch.png](arch.png)
+![arch.png](arch.svg)
