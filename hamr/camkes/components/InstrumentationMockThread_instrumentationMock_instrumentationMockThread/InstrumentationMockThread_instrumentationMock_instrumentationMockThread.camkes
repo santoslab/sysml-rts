@@ -1,0 +1,32 @@
+import <std_connector.camkes>;
+component InstrumentationMockThread_instrumentationMock_instrumentationMockThread {
+  include <sb_types.h>;
+  include <sp_union_art_DataContent.h>;
+  control;
+  consumes Notification sb_periodic_dispatch_notification;
+  dataport sp_union_art_DataContent_t sb_unit1_temperatureLogic_channel1;
+  dataport sp_union_art_DataContent_t sb_unit1_temperatureLogic_channel2;
+  dataport sp_union_art_DataContent_t sb_unit1_temperatureLogic_channel3;
+  dataport sp_union_art_DataContent_t sb_unit1_temperatureLogic_channel4;
+  dataport sp_union_art_DataContent_t sb_unit1_pressureLogic_channel1;
+  dataport sp_union_art_DataContent_t sb_unit1_pressureLogic_channel2;
+  dataport sp_union_art_DataContent_t sb_unit1_pressureLogic_channel3;
+  dataport sp_union_art_DataContent_t sb_unit1_pressureLogic_channel4;
+  dataport sp_union_art_DataContent_t sb_unit1_saturationLogic_channel1;
+  dataport sp_union_art_DataContent_t sb_unit1_saturationLogic_channel2;
+  dataport sp_union_art_DataContent_t sb_unit1_saturationLogic_channel3;
+  dataport sp_union_art_DataContent_t sb_unit1_saturationLogic_channel4;
+  dataport sp_union_art_DataContent_t sb_unit2_temperatureLogic_channel1;
+  dataport sp_union_art_DataContent_t sb_unit2_temperatureLogic_channel2;
+  dataport sp_union_art_DataContent_t sb_unit2_temperatureLogic_channel3;
+  dataport sp_union_art_DataContent_t sb_unit2_temperatureLogic_channel4;
+  dataport sp_union_art_DataContent_t sb_unit2_pressureLogic_channel1;
+  dataport sp_union_art_DataContent_t sb_unit2_pressureLogic_channel2;
+  dataport sp_union_art_DataContent_t sb_unit2_pressureLogic_channel3;
+  dataport sp_union_art_DataContent_t sb_unit2_pressureLogic_channel4;
+  dataport sp_union_art_DataContent_t sb_unit2_saturationLogic_channel1;
+  dataport sp_union_art_DataContent_t sb_unit2_saturationLogic_channel2;
+  dataport sp_union_art_DataContent_t sb_unit2_saturationLogic_channel3;
+  dataport sp_union_art_DataContent_t sb_unit2_saturationLogic_channel4;
+  has semaphore sb_dispatch_sem;
+}

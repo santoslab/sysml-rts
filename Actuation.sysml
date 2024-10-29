@@ -180,11 +180,6 @@ package Actuation {
 
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
 		attribute :>> Period = 1000 [millisecond];
-		
-		//@Properties {
-		//	Dispatch_Protocol = Periodic;
-		//	Period = 1000;
-		//}
 
 		language "GUMBO" /*{
 			compute
@@ -224,11 +219,6 @@ package Actuation {
 
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
 		attribute :>> Period = 1000 [millisecond];
-		
-		//@Properties {
-		//	Dispatch_Protocol = Periodic;
-		//	Period = 1000;
-		//}
 
 		language "GUMBO" /*{
 			compute
@@ -257,13 +247,14 @@ package Actuation {
 
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
 		attribute :>> Period = 1000 [millisecond];
-		
-		//@Properties {
-		//	Dispatch_Protocol = Periodic;
-		//	Period = 1000;
-		//}
 
 		language "GUMBO" /*{
+			initialize
+				guarantee initOutputDataPort 
+					"The Initialize Entry Point must initialize all component 
+					|local state and all output data ports.":
+					output == false;
+								
 			compute
 				// (a || b)
 			guarantee actuatorOutput:

@@ -1,5 +1,6 @@
-//@ HAMR: --platform JVM --slang-output-dir hamr/slang
-
+//@ HAMR: --platform JVM --package-name rts --runtime-monitoring --output-dir hamr --sourcepath ./sysml-aadl-libraries:./models/sysml-rts
+//@ HAMR: --platform Linux --package-name rts --run-transpiler --max-string-size 250 --output-dir hamr --sourcepath ./sysml-aadl-libraries:./models/sysml-rts
+//@ HAMR: --platform seL4 --package-name rts --run-transpiler --max-string-size 250 --output-dir hamr --sourcepath ./sysml-aadl-libraries:./models/sysml-rts
 package RTS {
 	
 	private import Actuation::*;
@@ -7,7 +8,7 @@ package RTS {
 	private import EventControl::*;
 	private import Instrumentation::*;
 	private import AADL::*;
-	
+
 	part def RTS :> System {
 		part actuationSubsystem: Actuation::RTSActuation;
 		part instrumentationMock: Instrumentation::InstrumentationMockProcess;
@@ -46,8 +47,8 @@ package RTS {
 		// Actuator Output
 		connection foo1 : PortConnection connect actuationSubsystem.tempPressureOutput to actuatorsMock.tempPressureActuate;
 		connection foo2 : PortConnection connect actuationSubsystem.saturationOutput to actuatorsMock.saturationActuate;
-		
-		// : PortConnection connection instances (note c0's source is a non composite part usage)
+
+		// alternative 'direct' connections between threads
 		/*
 		connection c0 : PortConnection connect actuationSubsystem.actuationUnit1.temperatureLogic.coincidenceLogic.actuate to actuationSubsystem.actuationUnit1.tempPressureTripOut.orLogic.channel1;
 		connection c1 : PortConnection connect actuationSubsystem.actuationUnit1.pressureLogic.coincidenceLogic.actuate to actuationSubsystem.actuationUnit1.tempPressureTripOut.orLogic.channel2;
