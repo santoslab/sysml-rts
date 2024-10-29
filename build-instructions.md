@@ -55,6 +55,7 @@ This adds a ``camkes.sireum`` image to your docker images.
 
     For Linux
     ```
+    $SIREUM_HOME/bin/linux/arm/vscodium/bin/codeive <sysmlv2-models-directory>
     ```
 
     For Windows
@@ -75,6 +76,7 @@ This adds a ``camkes.sireum`` image to your docker images.
 
     Linux
     ```
+    $SIREUM_HOME/bin/linux/idea/bin/idea ./hamr/slang 2> /dev/null
     ```
 
     Windows
