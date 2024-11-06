@@ -23,29 +23,27 @@ val hamrDir: Os.Path = root / "hamr"
 val cDir = hamrDir / "c"
 val camkesDir = hamrDir / "camkes"
 val slangDir = hamrDir / "slang"
-val slangRMDir = hamrDir / "slang-rm"
 
 val toKeep = ops.ISZOps(ISZ(
   (root / "bin"),
   (camkesDir / "kernel" / "domain_schedule.c"),
   (camkesDir/ "settings.cmake"),
-  (slangDir / "bin" / "transpile-sel4-cust.cmd"),
 
   (cDir / "ext-c"),
+
   (slangDir / ".idea"),
+  (slangDir / "bin" / "run-logika.cmd"),
+  (slangDir / "bin" / "transpile-sel4-cust.cmd"),
   (slangDir / "src" / "main" / "component"),
   (slangDir / "src" / "test" / "bridge"),
   (slangDir / "src" / "test" / "system"),
-  (slangDir / ".idea"),
-  (slangRMDir / "src" / "main" / "component"),
-  (slangRMDir / "src" / "test" / "bridge"),
-  (slangRMDir / "src" / "test" / "system")
 ))
 
 
 def rec(p: Os.Path, onlyDelAutoGen: B): Unit = {
   if(p.isFile) {
-    if ((!toKeep.contains(p) && !onlyDelAutoGen) || ops.StringOps(p.read).contains("Do not edit")) {
+    if (!toKeep.contains(p) && (
+       (!onlyDelAutoGen) || ops.StringOps(p.read).contains("Do not edit"))) {
       p.remove()
       println(s"Removed file: $p")
     }

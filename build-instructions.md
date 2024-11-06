@@ -16,18 +16,16 @@ git clone --rec https://github.com/santoslab/sysmlv2-models.git
 
 For Linux/macOS
 ```bash
-(DIR=Sireum && export SIREUM_V=4.20241028.60464f2 && rm -fR $DIR && mkdir -p $DIR/bin && cd $DIR/bin && curl -JLso init.sh https://raw.githubusercontent.com/sireum/kekinian/$SIREUM_V/bin/init.sh && bash init.sh)
-export SIREUM_HOME="$(pwd)/Sireum"
-export PATH="$SIREUM_HOME/bin:$PATH"
-sireum setup vscode 
+DISTRO=ive sh -c "$(curl -fsSL https://github.com/sireum/kekinian/releases/download/dev/install.cmd)"
+export SIREUM_HOME=$HOME/Applications/Sireum/
+export PATH=$SIREUM_HOME/bin:$PATH
 ```
 
 For Windows
 ```cmd
-cmd /V /C "set DIR=Sireum&& set SIREUM_V=4.20241028.60464f2&& (if exist !DIR! rd /S /Q !DIR!) && md !DIR!\bin && cd !DIR!\bin && curl -JLso init.bat https://raw.githubusercontent.com/sireum/kekinian/!SIREUM_V!/bin/init.bat && init.bat"
-set SIREUM_HOME="%cd%\Sireum"
+cmd /V/C "set DISTRO=ive&& curl -JLOs https://github.com/sireum/kekinian/releases/download/dev/install.cmd && install.cmd && del /q/f install.cmd"
+set SIREUM_HOME="%USERPROFILEx%\Applications\Sireum"
 set PATH=%SIREUM_HOME%\bin;%PATH%
-sireum.bat setup vscode
 ```
 
 ## Build CAmkES + Sireum Docker Image if Targeting Linux or CAmkES
