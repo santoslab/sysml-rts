@@ -10,8 +10,8 @@ object Actuator_actuationSubsystem_tempPressureActuatorUnit_tempPressureActuator
   /** Initialize Entrypoint Contract
     *
     * guarantee initOutputDataPort
-    *   "The Initialize Entry Point must initialize all component 
-    *   local state and all output data ports."
+    *   The Initialize Entry Point must initialize all component 
+    *   local state and all output data ports.
     * @param api_output outgoing data port
     */
   @strictpure def initialize_initOutputDataPort (

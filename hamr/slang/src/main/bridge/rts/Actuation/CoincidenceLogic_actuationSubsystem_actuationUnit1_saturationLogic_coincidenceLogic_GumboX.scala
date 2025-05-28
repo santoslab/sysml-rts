@@ -10,12 +10,12 @@ object CoincidenceLogic_actuationSubsystem_actuationUnit1_saturationLogic_coinci
   /** Compute Entrypoint Contract
     *
     * guarantee coincidenceOutput
-    *   "from actuationUnit.cry
+    *   from actuationUnit.cry
     *   Coincidence_2_4 : [4]TripPort -> Bit
     *   Coincidence_2_4 x =
     *       (a&&b) || ((a||b) && (c||d)) || (c&&d)
     *   For specification redundancy, provide an alternate but equivalent specification
-    *   of the concept 'at least two of the input channels are true.'"
+    *   of the concept 'at least two of the input channels are true.'
     * @param api_channel1 incoming data port
     * @param api_channel2 incoming data port
     * @param api_channel3 incoming data port

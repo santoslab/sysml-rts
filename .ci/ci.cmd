@@ -75,4 +75,9 @@ if (result == 0) {
   result = run("Verifying via Logika", T, proc"$sireum slang run ${homeDir / "hamr" / "slang" / "bin" / "run-logika.cmd"}")
 }
 
+if (result == 0) {
+  // the checked in slang code should include runtime-monitoring artifacts
+  result = run("Re-running codegen targeting JVM with runtime monitoring", F, proc"$sireum slang run ${homeDir / "bin" / "run-hamr.cmd"} JVM")
+}
+
 Os.exit(result)

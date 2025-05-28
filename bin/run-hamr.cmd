@@ -58,12 +58,17 @@ if (sysml_aadl_libraries.isEmpty) {
   }
 }
 
-var codegeArgs: ISZ[String] = ISZ(
+var codegenArgs: ISZ[String] = ISZ(
     sireum.value, "hamr", "sysml", "codegen",
     "--platform", platform,
-    "--sourcepath", st"${(sysml_aadl_libraries, s"${Os.pathSepChar}")}${Os.pathSepChar}${home.value}".render,
-    (home / "RTS.sysml").value)
+    "--sourcepath", st"${(sysml_aadl_libraries, s"${Os.pathSepChar}")}${Os.pathSepChar}${home.value}".render)
 
-val results = Os.proc(codegeArgs).at(home.up.up).console.run()
+if (platform == "JVM") {
+  codegenArgs = codegenArgs :+ "--runtime-monitoring"
+}
+
+codegenArgs = codegenArgs :+ (home / "RTS.sysml").value
+
+val results = Os.proc(codegenArgs).at(home.up.up).console.run()
 
 Os.exit(results.exitCode)
