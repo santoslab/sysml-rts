@@ -70,7 +70,7 @@ void timer_complete_callback() {
 // no op under the new time server scheme.
 void clock_init() { }
 
-// Set interrupt interval, in milliseconds.
+// Set interrupt interval, in mss.
 void clock_set_interval_in_ms(uint32_t interval) {
   timer_periodic(0, ((uint64_t)interval) * NS_IN_MS);
 }

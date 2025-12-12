@@ -2,7 +2,7 @@ package Actuators {
 	
 	private import AADL::*;
 	private import AADL_Project::*;
-	private import AADL_Project::Time_Units::*;
+	private import HAMR::Time_Units::*;
 	
 	part def ActuatorsMockProcess :> Process {
 		part actuatorsMockThread : ActuatorsMockThread;
@@ -19,7 +19,7 @@ package Actuators {
 		in port saturationActuate : DataPort { in :> type : Base_Types::Boolean; }
 
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
-		attribute :>> Period = 1000 [millisecond];
+		attribute :>> Period = 1000 [ms];
 		
 		//@Properties {
 		//	Dispatch_Protocol = Periodic;
