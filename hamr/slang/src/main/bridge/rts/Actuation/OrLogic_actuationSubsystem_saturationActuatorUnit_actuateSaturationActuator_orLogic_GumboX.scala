@@ -42,8 +42,10 @@ object OrLogic_actuationSubsystem_saturationActuatorUnit_actuateSaturationActuat
       api_channel1: Base_Types.Boolean,
       api_channel2: Base_Types.Boolean,
       api_actuate: Base_Types.Boolean): B =
-    (// CEP-Guar: guarantee clauses of orLogic's compute entrypoint
-     compute_CEP_T_Guar (api_channel1, api_channel2, api_actuate))
+    {
+      // CEP-Guar: guarantee clauses of orLogic's compute entrypoint
+      compute_CEP_T_Guar (api_channel1, api_channel2, api_actuate)
+    }
 
   /** CEP-Post: Compute Entrypoint Post-Condition for orLogic via containers
     *

@@ -32,8 +32,10 @@ object Actuator_actuationSubsystem_saturationActuatorUnit_saturationActuator_act
     */
   @strictpure def inititialize_IEP_Post (
       api_output: Base_Types.Boolean): B =
-    (// IEP-Guar: Initialize Entrypoint contract for actuator
-     initialize_IEP_Guar(api_output))
+    {
+      // IEP-Guar: Initialize Entrypoint contract for actuator
+      initialize_IEP_Guar(api_output)
+    }
 
   /** IEP-Post: Initialize Entrypoint Post-Condition via container
     *
@@ -78,8 +80,10 @@ object Actuator_actuationSubsystem_saturationActuatorUnit_saturationActuator_act
       api_input: Base_Types.Boolean,
       api_manualActuatorInput: Base_Types.Boolean,
       api_output: Base_Types.Boolean): B =
-    (// CEP-Guar: guarantee clauses of actuator's compute entrypoint
-     compute_CEP_T_Guar (api_input, api_manualActuatorInput, api_output))
+    {
+      // CEP-Guar: guarantee clauses of actuator's compute entrypoint
+      compute_CEP_T_Guar (api_input, api_manualActuatorInput, api_output)
+    }
 
   /** CEP-Post: Compute Entrypoint Post-Condition for actuator via containers
     *

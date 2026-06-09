@@ -16,7 +16,6 @@ exit /B %errorlevel%
 ::!#*/
 // #Sireum
 
-import org.sireum.String.escape
 import org.sireum._
 
 val home = Os.slashDir.up
@@ -69,6 +68,6 @@ if (platform == "JVM") {
 
 codegenArgs = codegenArgs :+ (home / "RTS.sysml").value
 
-val results = Os.proc(codegenArgs).at(home.up.up).console.run()
+val results = Os.proc(codegenArgs).at(home).echo.console.run()
 
 Os.exit(results.exitCode)

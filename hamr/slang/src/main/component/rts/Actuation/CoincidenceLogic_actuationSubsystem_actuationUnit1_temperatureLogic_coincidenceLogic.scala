@@ -40,11 +40,11 @@ object CoincidenceLogic_actuationSubsystem_actuationUnit1_temperatureLogic_coinc
         //   For specification redundancy, provide an alternate but equivalent specification
         //   of the concept 'at least two of the input channels are true.'
         api.actuate == (api.channel1 & api.channel2 |
-           (api.channel1 & api.channel3 |
-             (api.channel1 & api.channel4 |
-               (api.channel2 & api.channel3 |
-                 (api.channel2 & api.channel4 |
-                   api.channel3 & api.channel4)))))
+          (api.channel1 & api.channel3 |
+            (api.channel1 & api.channel4 |
+              (api.channel2 & api.channel3 |
+                (api.channel2 & api.channel4 |
+                  api.channel3 & api.channel4)))))
         // END COMPUTE ENSURES timeTriggered
       )
     )

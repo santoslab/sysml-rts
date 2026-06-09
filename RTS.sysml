@@ -1,6 +1,6 @@
-//@ HAMR: --platform JVM --package-name rts --runtime-monitoring --output-dir hamr --sourcepath ./sysml-aadl-libraries:./models/sysml-rts
-//@ HAMR: --platform Linux --package-name rts --run-transpiler --max-string-size 250 --output-dir hamr --sourcepath ./sysml-aadl-libraries:./models/sysml-rts
-//@ HAMR: --platform seL4 --package-name rts --run-transpiler --max-string-size 250 --output-dir hamr --sourcepath ./sysml-aadl-libraries:./models/sysml-rts
+//@ HAMR: --platform JVM --package-name rts --runtime-monitoring --output-dir ./hamr
+//@ HAMR: --platform Linux --package-name rts --run-transpiler --max-string-size 250 --output-dir ./hamr
+//@ HAMR: --platform seL4 --package-name rts --run-transpiler --max-string-size 250 --output-dir ./hamr
 package RTS {
 	
 	private import Actuation::*;

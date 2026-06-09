@@ -25,6 +25,9 @@ import rts.RandomLib
 @msig trait OrLogic_actuationSubsystem_actuationUnit2_tempPressureTripOut_orLogic_Profile_P_Trait extends Profile {
   def api_channel1: RandomLib // random lib for generating Base_Types.Boolean
   def api_channel2: RandomLib // random lib for generating Base_Types.Boolean
+
+  def update_api_channel1(v: RandomLib): OrLogic_actuationSubsystem_actuationUnit2_tempPressureTripOut_orLogic_Profile_P_Trait
+  def update_api_channel2(v: RandomLib): OrLogic_actuationSubsystem_actuationUnit2_tempPressureTripOut_orLogic_Profile_P_Trait
 }
 
 @record class OrLogic_actuationSubsystem_actuationUnit2_tempPressureTripOut_orLogic_Profile_P(
@@ -38,12 +41,23 @@ import rts.RandomLib
       api_channel1 = api_channel1.nextB(),
       api_channel2 = api_channel2.nextB()))
   }
+
+  override def update_api_channel1(v: RandomLib): OrLogic_actuationSubsystem_actuationUnit2_tempPressureTripOut_orLogic_Profile_P_Trait = {
+    return this(api_channel1 = v)
+  }
+
+  override def update_api_channel2(v: RandomLib): OrLogic_actuationSubsystem_actuationUnit2_tempPressureTripOut_orLogic_Profile_P_Trait = {
+    return this(api_channel2 = v)
+  }
 }
 
 // Profile with generators for state variables and incoming ports
 @msig trait OrLogic_actuationSubsystem_actuationUnit2_tempPressureTripOut_orLogic_Profile_PS_Trait extends OrLogic_actuationSubsystem_actuationUnit2_tempPressureTripOut_orLogic_Profile_P_Trait {
   def api_channel1: RandomLib // random lib for generating Base_Types.Boolean
   def api_channel2: RandomLib // random lib for generating Base_Types.Boolean
+
+  def update_api_channel1(v: RandomLib): OrLogic_actuationSubsystem_actuationUnit2_tempPressureTripOut_orLogic_Profile_PS_Trait
+  def update_api_channel2(v: RandomLib): OrLogic_actuationSubsystem_actuationUnit2_tempPressureTripOut_orLogic_Profile_PS_Trait
 }
 
 @record class OrLogic_actuationSubsystem_actuationUnit2_tempPressureTripOut_orLogic_Profile_PS(
@@ -56,5 +70,13 @@ import rts.RandomLib
     return (OrLogic_actuationSubsystem_actuationUnit2_tempPressureTripOut_orLogic_PreState_Container_PS (
       api_channel1 = api_channel1.nextB(),
       api_channel2 = api_channel2.nextB()))
+  }
+
+  override def update_api_channel1(v: RandomLib): OrLogic_actuationSubsystem_actuationUnit2_tempPressureTripOut_orLogic_Profile_PS_Trait = {
+    return this(api_channel1 = v)
+  }
+
+  override def update_api_channel2(v: RandomLib): OrLogic_actuationSubsystem_actuationUnit2_tempPressureTripOut_orLogic_Profile_PS_Trait = {
+    return this(api_channel2 = v)
   }
 }

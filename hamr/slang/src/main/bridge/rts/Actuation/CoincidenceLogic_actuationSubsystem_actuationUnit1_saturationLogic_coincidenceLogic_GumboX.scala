@@ -65,8 +65,10 @@ object CoincidenceLogic_actuationSubsystem_actuationUnit1_saturationLogic_coinci
       api_channel3: Base_Types.Boolean,
       api_channel4: Base_Types.Boolean,
       api_actuate: Base_Types.Boolean): B =
-    (// CEP-Guar: guarantee clauses of coincidenceLogic's compute entrypoint
-     compute_CEP_T_Guar (api_channel1, api_channel2, api_channel3, api_channel4, api_actuate))
+    {
+      // CEP-Guar: guarantee clauses of coincidenceLogic's compute entrypoint
+      compute_CEP_T_Guar (api_channel1, api_channel2, api_channel3, api_channel4, api_actuate)
+    }
 
   /** CEP-Post: Compute Entrypoint Post-Condition for coincidenceLogic via containers
     *
